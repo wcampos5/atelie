@@ -37,3 +37,42 @@ th.sorting_desc{
 .retorno img{
 	margin: 0, 5px, 5px, 0;
 }
+
+
+/*-----------------------------------------------------------
+ *    		./views/site_view - Bootstrap CSS 
+ ------------------------------------------------------------*/
+
+
+.jumbotron{
+	background-color: lightpink;
+	color:white;
+}
+			
+.well{
+	background-color: pink;
+	color:white;
+}
+
+.carousel{
+	background-color: lightpink;
+	color:white;
+}
+
+.tab-content{
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+}
+
+.nav-tabs{
+	margin-bottom: 0;
+}
+
+.msgPurchase {
+    background-color: lightpink;
+    color: Red;
+    padding: 7px;
+    border: solid 1px pink;
+}

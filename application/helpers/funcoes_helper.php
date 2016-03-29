@@ -90,6 +90,41 @@ function initPanel() {
 
 
 
+/**
+ * Carrega os recursos necessários ao Painel Administrativo
+ */
+function initSite() {
+
+	$CI =& get_instance();
+	$CI->load->library(array('Sistema', 'session', 'form_validation'));
+	$CI->load->helper(array('form', 'url', 'array', 'text'));
+	
+	//Carregamento dos Model
+	$CI->load->model('usuarios_model', 'usuarios');
+	
+	//Configuração de propriedades padrão do Painel de Gerenciamento
+	//Inclui um arquivo CSS local
+	setTheme('cssInclude', loadCSS(array('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+	'//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css'),'','All',TRUE), FALSE);
+	setTheme('cssInclude', loadCSS('app.css','assets/css','All',FALSE),FALSE);
+	
+	//Inclui os arquivos JS
+	/* setTheme('jsInclude', loadJS(array('jquery.min', FALSE)), FALSE); //Exemplo local */
+	//Inclui os JS remotos
+	setTheme('jsInclude', loadJS(array('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js',
+			'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
+			'//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js'
+	),'',TRUE), FALSE);
+	
+	setTheme('defaultTitle', 'Atelie Papel Picado');
+	setTheme('footer', '<p>Ateliê Papel Picado &copy; 2016 | Todos os direitos reservados.</p>');
+	//Definição da view principal do Painel Administrativo
+	setTheme('template', 'site_view');
+
+}  /* End of initiPanel() */
+
+
+
 /*
  * Carrega um Template passado o array $theme como paramentro.
  * 
